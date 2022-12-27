@@ -5,8 +5,7 @@ const nextConfig = {
   images: {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    loader: 'akamai',
-    path: 'https://lastofpudge.github.io/next-portfolio/'
+    loader: 'akamai'
   },
   experimental: {
     appDir: true,

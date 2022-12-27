@@ -1,45 +1,44 @@
 [
-  {
-  },
+  {},
   {
     "link": "https://de-new.com/",
-    "image": "/images/slider/de-new-vert.jpg",
+    "image": "/next-portfolio/images/slider/de-new-vert.jpg",
     "desc": "Interior Design Studio",
     "cursor": "pointer"
   },
   {
     "link": "https://tero.design/",
-    "image": "/images/slider/tero.jpg",
+    "image": "/next-portfolio/images/slider/tero.jpg",
     "desc": "Architectural visualization studio",
     "cursor": "pointer2"
   },
   {
     "link": "https://www.batyevka.net/uk",
-    "image": "/images/slider/bat.jpg",
+    "image": "/next-portfolio/images/slider/bat.jpg",
     "desc": "IPS",
     "cursor": "pointer2"
   },
   {
     "link": "https://hotkey.ua/",
-    "image": "/images/slider/hotkey.jpg",
+    "image": "/next-portfolio/images/slider/hotkey.jpg",
     "desc": "Business automation service",
     "cursor": "pointer"
   },
   {
     "link": "https://parman.com.ua/",
-    "image": "/images/slider/parman.jpg",
+    "image": "/next-portfolio/images/slider/parman.jpg",
     "desc": "Ecommerce online store",
     "cursor": "pointer2"
   },
   {
     "link": "https://www.doornbos-flex.com/",
-    "image": "/images/slider/doflex.jpg",
+    "image": "/next-portfolio/images/slider/doflex.jpg",
     "desc": "Forklift company",
     "cursor": "pointer2"
   },
   {
     "link": "https://corvin.ua/",
-    "image": "/images/slider/corvin.jpg",
+    "image": "/next-portfolio/images/slider/corvin.jpg",
     "desc": "Whiskey pub bar",
     "cursor": "pointer"
   },
@@ -51,13 +50,13 @@
   },
   {
     "link": "https://promatin.nl/",
-    "image": "/images/slider/promatin.jpg",
+    "image": "/next-portfolio/images/slider/promatin.jpg",
     "desc": "Online store for selling building materials",
     "cursor": "pointer2"
   },
   {
     "link": "https://otdiha.net/",
-    "image": "/images/slider/otdiha.jpg",
+    "image": "/next-portfolio/images/slider/otdiha.jpg",
     "desc": "Handbook of boarding cottages",
     "cursor": "pointer2"
   }
