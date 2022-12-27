@@ -5,7 +5,6 @@ export default class Doc extends Document {
     return (
       <Html>
         <Head>
-          <title>Portfolio</title>
           <meta
             name='viewport'
             content="width=device-width,initial-scale=1,user-scalable=no, viewport-fit=cover'"

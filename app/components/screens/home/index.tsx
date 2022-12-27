@@ -1,17 +1,19 @@
 import { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useEffect } from 'react'
+import { useCallback, useEffect } from 'react'
 
 import Figure from '@/components/layout/Figure'
 import Header from '@/components/layout/Header'
 import Slider from '@/components/layout/slider'
 import useCursor from '@/hooks/useCursor'
 
+const { SplitText } = require('@/libs/gsap/SplitText.min.js')
+
 const Home: NextPage = () => {
   useCursor()
 
-  useEffect(() => {
+  const runEffects = useCallback(() => {
     if (typeof window !== 'undefined') {
       // @ts-ignore
       const Text = new SplitText('.js-title', { type: 'chars' })
@@ -23,6 +25,10 @@ const Home: NextPage = () => {
       )
     }
   }, [])
+
+  useEffect(() => {
+    runEffects()
+  }, [runEffects])
 
   return (
     <div>
