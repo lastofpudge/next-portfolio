@@ -55,7 +55,7 @@ const Home: NextPage = () => {
               <div className='p-info'>
                 <h1 className='js-title'>
                   Websites <br />
-                  Portfolio{' '}
+                  Portfolio
                 </h1>
               </div>
               <Slider />
