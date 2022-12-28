@@ -7,6 +7,7 @@ import Figure from '@/components/layout/Figure'
 import Header from '@/components/layout/Header'
 import Slider from '@/components/layout/slider'
 import useCursor from '@/hooks/useCursor'
+import Meta from '@/utils/meta'
 
 const { SplitText } = require('@/libs/gsap/SplitText.min.js')
 
@@ -14,24 +15,25 @@ const Home: NextPage = () => {
   useCursor()
 
   const runEffects = useCallback(() => {
-    if (typeof window !== 'undefined') {
-      // @ts-ignore
-      const Text = new SplitText('.js-title', { type: 'chars' })
-      // @ts-ignore
-      TweenMax.staggerFrom(Text.chars, 1, { x: -40, autoAlpha: 0 }, 0.05).fromTo(
-        '.p-slider',
-        {},
-        { autoAlpha: 1, duration: 1.5 }
-      )
-    }
+    // @ts-ignore
+    const Text = new SplitText('.js-title', { type: 'chars' })
+    // @ts-ignore
+    TweenMax.staggerFrom(Text.chars, 1, { x: -40, autoAlpha: 0 }, 0.05).fromTo(
+      '.p-slider',
+      {},
+      { autoAlpha: 1, duration: 1.5 }
+    )
   }, [])
 
   useEffect(() => {
-    runEffects()
-  }, [runEffects])
+    if (typeof window !== 'undefined') {
+      runEffects()
+    }
+  })
 
   return (
     <div>
+      <Meta title='Portfolio' />
       <div id='cursor'></div>
       <div id='cursor-border'></div>
       <div className='section-full'>
@@ -55,7 +57,7 @@ const Home: NextPage = () => {
               <div className='p-info'>
                 <h1 className='js-title'>
                   Websites <br />
-                  Portfolio
+                  Portfolio{' '}
                 </h1>
               </div>
               <Slider />
