@@ -4,6 +4,7 @@ import { A11y, Keyboard, Mousewheel, Navigation, Scrollbar } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 import slides from './slides.json'
+import { prefix } from '@/utils/prefix'
 
 const Slider = () => {
   const params = {
@@ -40,8 +41,8 @@ const Slider = () => {
               {slide.link != undefined && slide.image != undefined && (
                 <>
                   <div className='p-slide__title'>{slide.desc}</div>
-                  <Link rel='nofollow' href={slide.link} className='p-slide__link' data-cursor={slide.cursor}>
-                    <Image quality={100} fill src={slide.image} alt='De-new' />
+                  <Link rel='nofollow' href={prefix + slide.link} className='p-slide__link' data-cursor={slide.cursor}>
+                    <Image quality={100} fill src={prefix + slide.image} alt='De-new' />
                   </Link>
                 </>
               )}
