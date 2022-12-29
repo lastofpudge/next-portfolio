@@ -14,8 +14,8 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 const nextConfig = {
+  ...env,
   reactStrictMode: true,
-  env,
   experimental: {
     appDir: true,
     fontLoaders: [{ loader: '@next/font/google', options: { subsets: ['latin'] } }]
