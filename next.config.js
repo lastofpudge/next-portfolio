@@ -1,13 +1,21 @@
 /** @type {import('next').NextConfig} */
 
+let env = {}
+
+if (process.env.NODE_ENV === 'production') {
+  env = {
+    images: {
+      loader: 'akamai',
+      path: '/next-portfolio/',
+      dangerouslyAllowSVG: true,
+      contentSecurityPolicy: 'default-src \'self\'; script-src \'none\'; sandbox;'
+    }
+  }
+}
+
 const nextConfig = {
   reactStrictMode: true,
-  images: {
-    loader: 'akamai',
-    path: '/next-portfolio/',
-    dangerouslyAllowSVG: true,
-    contentSecurityPolicy: 'default-src \'self\'; script-src \'none\'; sandbox;'
-  },
+  env,
   experimental: {
     appDir: true,
     fontLoaders: [{ loader: '@next/font/google', options: { subsets: ['latin'] } }]
