@@ -38,7 +38,7 @@ const Home: NextPage = () => {
       <div id='cursor-border'></div>
       <div className='section-full'>
         <Link href='https://github.com/lastofpudge' className='git-link' data-cursor='pointer2'>
-          <Image src='/git.svg' height={80} width={80} alt='Github' />
+          <Image src='/next-portfolio/git.svg' height={80} width={80} alt='Github' />
         </Link>
         <div className='container container-flow'>
           <Header />
