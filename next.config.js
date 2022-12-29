@@ -4,6 +4,8 @@ const nextConfig = {
   swcMinify: true,
   basePath: process.env.APP_ENV === 'production' ? process.env.APP_URL : '',
   images: {
+    loader: 'akamai',
+    path: '',
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: 'default-src \'self\'; script-src \'none\'; sandbox;'
   },
