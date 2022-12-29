@@ -28,7 +28,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_BASE_PATH: /next-portfolio
+      NEXT_PUBLIC_BASE_PATH: https://lastofpudge.github.io/next-portfolio/
     steps:
       - name: Checkout
         uses: actions/checkout@v3
