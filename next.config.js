@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  assetsPrefix: 'https://lastofpudge.github.io/next-portfolio/',
+  basePath: process.env.APP_ENV === 'production' ? process.env.APP_URL : '',
   images: {
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: 'default-src \'self\'; script-src \'none\'; sandbox;'
