@@ -3,9 +3,10 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   basePath: process.env.APP_ENV === 'production' ? process.env.BASE_PATH : '',
+  assetPrefix: './',
   images: {
     loader: 'akamai',
-    path: process.env.APP_ENV === 'production' ? process.env.BASE_PATH : '',
+    path: '',
     dangerouslyAllowSVG: true,
     contentSecurityPolicy: 'default-src \'self\'; script-src \'none\'; sandbox;'
   },
