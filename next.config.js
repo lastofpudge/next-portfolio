@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 
-let env = {}
+// let env = {}
 
 // if (process.env.NODE_ENV === 'production') {
 //   env = {
@@ -10,7 +10,7 @@ let env = {}
 // }
 
 const nextConfig = {
-  ...env,
+  // ...env,
   reactStrictMode: true,
   experimental: {
     appDir: true,
