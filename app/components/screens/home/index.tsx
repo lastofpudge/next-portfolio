@@ -3,33 +3,33 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useCallback, useEffect } from 'react'
 
-import Figure from '@/components/layout/Figure'
+import Figure from '@/components/Figure'
 import Header from '@/components/layout/Header'
-import Slider from '@/components/layout/slider'
+import Slider from '@/components/slider'
 import useCursor from '@/hooks/useCursor'
 import Meta from '@/utils/meta'
 
-const { SplitText } = require('@/libs/gsap/SplitText.min.js')
+const { SplitText } = require( '@/libs/gsap/SplitText.min.js' )
 
 const Home: NextPage = () => {
   useCursor()
 
-  const runEffects = useCallback(() => {
+  const runEffects = useCallback( () => {
     // @ts-ignore
-    const Text = new SplitText('.js-title', { type: 'chars' })
+    const Text = new SplitText( '.js-title', { type: 'chars' } )
     // @ts-ignore
-    TweenMax.staggerFrom(Text.chars, 1, { x: -40, autoAlpha: 0 }, 0.05).fromTo(
+    TweenMax.staggerFrom( Text.chars, 1, { x: -40, autoAlpha: 0 }, 0.05 ).fromTo(
       '.p-slider',
       {},
       { autoAlpha: 1, duration: 1.5 }
     )
-  }, [])
+  }, [] )
 
-  useEffect(() => {
+  useEffect( () => {
     if (typeof window !== 'undefined') {
       runEffects()
     }
-  })
+  } )
 
   return (
     <div>
@@ -38,7 +38,7 @@ const Home: NextPage = () => {
       <div id='cursor-border'></div>
       <div className='section-full'>
         <Link href='https://github.com/lastofpudge' className='git-link' data-cursor='pointer2'>
-          <Image src='/next-portfolio/git.svg' height={80} width={80} alt='Github' />
+          <Image src='/git.svg' height={80} width={80} alt='Github' />
         </Link>
         <div className='container container-flow'>
           <Header />

@@ -2,61 +2,61 @@
   {},
   {
     "link": "https://de-new.com/",
-    "image": "/next-portfolio/images/slider/de-new-vert.jpg",
+    "image": "/images/slider/de-new-vert.jpg",
     "desc": "Interior Design Studio",
     "cursor": "pointer"
   },
   {
     "link": "https://tero.design/",
-    "image": "/next-portfolio/images/slider/tero.jpg",
+    "image": "/images/slider/tero.jpg",
     "desc": "Architectural visualization studio",
     "cursor": "pointer2"
   },
   {
     "link": "https://www.batyevka.net/uk",
-    "image": "/next-portfolio/images/slider/bat.jpg",
+    "image": "/images/slider/bat.jpg",
     "desc": "IPS",
     "cursor": "pointer2"
   },
   {
     "link": "https://hotkey.ua/",
-    "image": "/next-portfolio/images/slider/hotkey.jpg",
+    "image": "/images/slider/hotkey.jpg",
     "desc": "Business automation service",
     "cursor": "pointer"
   },
   {
     "link": "https://parman.com.ua/",
-    "image": "/next-portfolio/images/slider/parman.jpg",
+    "image": "/images/slider/parman.jpg",
     "desc": "Ecommerce online store",
     "cursor": "pointer2"
   },
   {
     "link": "https://www.doornbos-flex.com/",
-    "image": "/next-portfolio/images/slider/doflex.jpg",
+    "image": "/images/slider/doflex.jpg",
     "desc": "Forklift company",
     "cursor": "pointer2"
   },
   {
     "link": "https://corvin.ua/",
-    "image": "/next-portfolio/images/slider/corvin.jpg",
+    "image": "/images/slider/corvin.jpg",
     "desc": "Whiskey pub bar",
     "cursor": "pointer"
   },
   {
     "link": "https://myclient.me/ua",
-    "image": "/next-portfolio/images/slider/elmy.jpg",
+    "image": "/images/slider/elmy.jpg",
     "desc": "Website for app online customer records",
     "cursor": "pointer2"
   },
   {
     "link": "https://promatin.nl/",
-    "image": "/next-portfolio/images/slider/promatin.jpg",
+    "image": "/images/slider/promatin.jpg",
     "desc": "Online store for selling building materials",
     "cursor": "pointer2"
   },
   {
     "link": "https://otdiha.net/",
-    "image": "/next-portfolio/images/slider/otdiha.jpg",
+    "image": "/images/slider/otdiha.jpg",
     "desc": "Handbook of boarding cottages",
     "cursor": "pointer2"
   }

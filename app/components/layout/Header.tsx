@@ -1,4 +1,4 @@
-import Menu from '@/components/ui/Menu'
+import Menu from '@/components/Menu'
 
 const Header = () => {
   return (
