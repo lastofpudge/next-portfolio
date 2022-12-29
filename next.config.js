@@ -4,6 +4,8 @@ let env = {}
 
 if (process.env.NODE_ENV === 'production') {
   env = {
+    basePath: process.env.NEXT_PUBLIC_BASE_PATH,
+    assetPrefix: process.env.NEXT_PUBLIC_BASE_PATH,
     images: {
       loader: 'akamai',
       path: '/next-portfolio/',
