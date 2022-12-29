@@ -6,7 +6,7 @@ if (process.env.APP_ENV === 'production') {
   env = {
     images: {
       loader: 'akamai',
-      path: './',
+      path: './next-portfolio/images/',
       dangerouslyAllowSVG: true,
       contentSecurityPolicy: 'default-src \'self\'; script-src \'none\'; sandbox;'
     }
