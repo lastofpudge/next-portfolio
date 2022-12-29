@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   basePath: process.env.APP_ENV === 'production' ? process.env.BASE_PATH : '',
-  assetPrefix: './',
+  assetPrefix: process.env.APP_ENV === 'production' ? process.env.BASE_PATH + '/' : '',
   images: {
     loader: 'akamai',
     path: '',
