@@ -11,6 +11,9 @@
 
 const nextConfig = {
   // ...env,
+  images: {
+    dangerouslyAllowSVG: true
+  },
   reactStrictMode: true,
   experimental: {
     appDir: true,
