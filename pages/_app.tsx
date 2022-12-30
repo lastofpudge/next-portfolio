@@ -9,7 +9,6 @@ if (typeof window !== 'undefined') {
   const { SplitText } = require('@/libs/gsap/SplitText.min.js')
   const { MotionPathPlugin } = require('@/libs/gsap/MotionPathPlugin.min.js')
 
-  // @ts-ignore
   gsap.registerPlugin(SplitText, MotionPathPlugin)
 }
 

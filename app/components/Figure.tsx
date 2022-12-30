@@ -3,9 +3,8 @@ import { FC, useEffect } from 'react'
 const Figure: FC = () => {
   useEffect(() => {
 
-    TweenMax.set('.astronaut', { scale: 0.5, autoAlpha: 1 })
+    gsap.set('.astronaut', { scale: 0.5, autoAlpha: 1 })
 
-    // @ts-ignore
     gsap.to('.astronaut', {
       delay: 3,
       duration: 5,

@@ -17,12 +17,12 @@ const Home: NextPage = () => {
   const runEffects = useCallback( () => {
     const Text = new SplitText( '.js-title', { type: 'chars' } )
 
-    // @ts-ignore
-    TweenMax.staggerFrom( Text.chars, 1, { x: -40, autoAlpha: 0 }, 0.05 ).fromTo(
-      '.p-slider',
-      {},
-      { autoAlpha: 1, duration: 1.5 }
-    )
+    gsap.from( Text.chars,  { x: -40, autoAlpha: 0, duration: 1 } )
+    gsap.fromTo(
+        '.p-slider',
+        {},
+        { autoAlpha: 1, duration: 1.5, delay: 1}
+      )
   }, [] )
 
   useEffect( () => {
