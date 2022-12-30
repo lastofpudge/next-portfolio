@@ -2,10 +2,8 @@ import { FC, useEffect } from 'react'
 
 const Figure: FC = () => {
   useEffect(() => {
-    // @ts-ignore
-    gsap.set('.astronaut', { scale: 0.5, autoAlpha: 1 })
 
-    const slideEl = document.querySelector('.p-items')
+    TweenMax.set('.astronaut', { scale: 0.5, autoAlpha: 1 })
 
     // @ts-ignore
     gsap.to('.astronaut', {
@@ -20,6 +18,7 @@ const Figure: FC = () => {
         autoRotate: 90
       },
       onComplete: function () {
+        const slideEl = document.querySelector('.p-items')
         slideEl?.classList.add('active')
       }
     })

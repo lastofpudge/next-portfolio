@@ -15,8 +15,8 @@ const Home: NextPage = () => {
   useCursor()
 
   const runEffects = useCallback( () => {
-    // @ts-ignore
     const Text = new SplitText( '.js-title', { type: 'chars' } )
+
     // @ts-ignore
     TweenMax.staggerFrom( Text.chars, 1, { x: -40, autoAlpha: 0 }, 0.05 ).fromTo(
       '.p-slider',
