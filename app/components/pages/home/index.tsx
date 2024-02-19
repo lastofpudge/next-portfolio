@@ -1,4 +1,3 @@
-import { NextPage } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useCallback, useEffect } from 'react'
@@ -11,7 +10,7 @@ import Meta from '@/utils/meta'
 
 const { SplitText } = require( '@/libs/gsap/SplitText.min.js' )
 
-const Home: NextPage = () => {
+const Home = () => {
   useCursor()
 
   const runEffects = useCallback( () => {

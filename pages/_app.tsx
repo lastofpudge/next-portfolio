@@ -13,10 +13,12 @@ if (typeof window !== 'undefined') {
 }
 
 const App = ({ Component, pageProps }: TypeAppProps) => {
+  const AnyComponent = Component as any;
+
   return (
     <>
       <MainProvider>
-        <Component {...pageProps} />
+        <AnyComponent {...pageProps} />
       </MainProvider>
     </>
   )

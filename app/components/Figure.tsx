@@ -1,8 +1,8 @@
-import { FC, useEffect } from 'react'
+import { useGSAP } from '@gsap/react'
+import { FC } from 'react'
 
 const Figure: FC = () => {
-  useEffect(() => {
-
+  useGSAP(() => {
     gsap.set('.astronaut', { scale: 0.5, autoAlpha: 1 })
 
     gsap.to('.astronaut', {
@@ -22,10 +22,6 @@ const Figure: FC = () => {
       }
     })
 
-    // if (typeof window !== 'undefined') {
-    //   const { MotionPathHelper } = require('@/libs/gsap/MotionPathHelper.min.js')
-    //   MotionPathHelper.create('.astronaut')
-    // }
   }, [])
 
   return (
