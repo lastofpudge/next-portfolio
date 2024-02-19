@@ -46,8 +46,9 @@ const Home: NextPage = () => {
             <span>html</span>
             <span>css</span>
             <span>javascript</span>
+            <span>wordpress</span>
             <span>figma</span>
-            <span>react/-native</span>
+            <span>react</span>
           </div>
           <Figure />
         </div>

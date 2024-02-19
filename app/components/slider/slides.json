@@ -25,12 +25,6 @@
     "cursor": "pointer"
   },
   {
-    "link": "https://parman.com.ua/",
-    "image": "/next-portfolio/images/slider/parman.jpg",
-    "desc": "Ecommerce online store",
-    "cursor": "pointer2"
-  },
-  {
     "link": "https://www.doornbos-flex.com/",
     "image": "/next-portfolio/images/slider/doflex.jpg",
     "desc": "Forklift company",
@@ -52,12 +46,6 @@
     "link": "https://promatin.nl/",
     "image": "/next-portfolio/images/slider/promatin.jpg",
     "desc": "Online store for selling building materials",
-    "cursor": "pointer2"
-  },
-  {
-    "link": "https://otdiha.net/",
-    "image": "/next-portfolio/images/slider/otdiha.jpg",
-    "desc": "Handbook of boarding cottages",
     "cursor": "pointer2"
   }
 ]
