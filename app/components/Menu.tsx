@@ -1,14 +1,18 @@
+import { useGSAP } from '@gsap/react'
 import Link from 'next/link'
 import { FC, useCallback, useEffect, useRef, useState } from 'react'
 
 const Menu: FC = () => {
-  const ref = useRef<HTMLButtonElement | null>( null )
-  const [isOpen, setIsOpen] = useState( false )
+  const ref = useRef<HTMLButtonElement | null>(null)
+  const [isOpen, setIsOpen] = useState(false)
 
-  const clickFunction = useCallback( () => {
+  const container = useRef(null)
+  const { contextSafe } = useGSAP({ scope: container })
+
+  const clickFunction = contextSafe(() => {
     let ww, opa, delay
 
-    document.body.classList.toggle( 'open-menu' )
+    document.body.classList.toggle('open-menu')
 
     if (!isOpen) {
       ww = '100%'
@@ -20,49 +24,49 @@ const Menu: FC = () => {
       delay = [0, 0, 0, 0]
     }
 
-    setIsOpen( !isOpen )
+    setIsOpen(!isOpen)
 
-    gsap.to( '.menu-info', {
+    gsap.to('.menu-info', {
       duration: 1,
       width: ww,
       ease: 'power1.inOut'
-    } )
+    })
 
-    gsap.to( '.js-anim-1', {
+    gsap.to('.js-anim-1', {
       duration: 0.5,
       delay: delay[0],
       ease: 'power1.inOut',
       opacity: opa
-    } )
+    })
 
-    gsap.to( '.js-anim-2', {
+    gsap.to('.js-anim-2', {
       duration: 0.5,
       delay: delay[1],
       ease: 'power1.inOut',
       opacity: opa
-    } )
+    })
 
-    gsap.to( '.js-anim-3', {
+    gsap.to('.js-anim-3', {
       duration: 0.5,
       delay: delay[2],
       ease: 'power1.inOut',
       opacity: opa
-    } )
+    })
 
-    gsap.to( '.js-anim-4', {
+    gsap.to('.js-anim-4', {
       duration: 0.5,
       delay: delay[3],
       ease: 'power1.inOut',
       opacity: opa
-    } )
-  }, [isOpen] )
+    })
+  })
 
-  useEffect( () => {
+  useEffect(() => {
     const curRef = ref.current
-    curRef?.addEventListener( 'click', clickFunction )
+    curRef?.addEventListener('click', clickFunction)
 
-    return () => curRef?.removeEventListener( 'click', clickFunction )
-  }, [clickFunction] )
+    return () => curRef?.removeEventListener('click', clickFunction)
+  }, [clickFunction])
 
   return (
     <>
@@ -74,22 +78,32 @@ const Menu: FC = () => {
           <ul>
             <li className='js-anim-1'>Additional related projects apps:</li>
             <li className='js-anim-2'>
-              <Link target='_blank' rel='nofollow' href='https://apps.apple.com/nl/app/do-metals-b-v/id1606400713'>
+              <Link
+                target='_blank'
+                rel='nofollow'
+                href='https://apps.apple.com/nl/app/do-metals-b-v/id1606400713'>
                 Company promo app ios
               </Link>
               <br />
-              <Link target='_blank' rel='nofollow'
-                    href='https://play.google.com/store/apps/details?id=com.app.dometals'>
+              <Link
+                target='_blank'
+                rel='nofollow'
+                href='https://play.google.com/store/apps/details?id=com.app.dometals'>
                 Company promo app android
               </Link>
             </li>
             <li className='js-anim-3'>
-              <Link target='_blank' rel='nofollow' href='https://play.google.com/store/apps/details?id=com.omnifix.fox'>
+              <Link
+                target='_blank'
+                rel='nofollow'
+                href='https://play.google.com/store/apps/details?id=com.omnifix.fox'>
                 Digital task manager android
               </Link>
               <br />
-              <Link target='_blank' rel='nofollow'
-                    href='https://apps.apple.com/nl/developer/kirill-chistiakov/id1370860836'>
+              <Link
+                target='_blank'
+                rel='nofollow'
+                href='https://apps.apple.com/nl/developer/kirill-chistiakov/id1370860836'>
                 Digital task manager ios
               </Link>
             </li>

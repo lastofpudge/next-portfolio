@@ -21,7 +21,6 @@ const Figure: FC = () => {
         slideEl?.classList.add('active')
       }
     })
-
   }, [])
 
   return (

@@ -7,17 +7,28 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
-  Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
   overflow-x: hidden;
-  @media(min-width: 1023px) {
+  @media (min-width: 1023px) {
     overflow-y: hidden;
   }
 }
 
-#__next, #__next > div {
+#__next,
+#__next > div {
   overflow-x: hidden;
-  @media(min-width: 1023px) {
+  @media (min-width: 1023px) {
     overflow-x: unset;
   }
 }
@@ -25,7 +36,6 @@ body {
 .p-slide * {
   user-select: none;
 }
-
 
 a {
   color: inherit;
@@ -54,9 +64,8 @@ body {
   background: black;
 }
 
-
 .container {
-  @media(min-width: 1600px) {
+  @media (min-width: 1600px) {
     max-width: 1600px;
   }
   width: 100%;
@@ -71,7 +80,7 @@ body {
 #motionPath {
   position: absolute;
   pointer-events: none;
-  @media(min-width: 1023px) {
+  @media (min-width: 1023px) {
     width: 100%;
     height: 100%;
     left: 100px;
@@ -81,7 +90,7 @@ body {
 
 #motionPath {
   display: none;
-  @media(min-width: 1023px) {
+  @media (min-width: 1023px) {
     display: block;
   }
 }
@@ -91,7 +100,7 @@ body {
   z-index: 10;
   pointer-events: none;
   display: none;
-  @media(min-width: 1023px) {
+  @media (min-width: 1023px) {
     display: block;
   }
 }
@@ -114,7 +123,7 @@ body {
   }
 
   a {
-    color: #4083FE;
+    color: #4083fe;
   }
 
   ul {
@@ -124,7 +133,7 @@ body {
   li {
     color: #111;
     font-size: 1rem;
-    @media(min-width: 1023px) {
+    @media (min-width: 1023px) {
       font-size: 1.3rem;
     }
     line-height: 1.5;
@@ -142,7 +151,8 @@ body {
     span {
       background: #111;
 
-      &:before, &:after {
+      &:before,
+      &:after {
         content: '';
         background: #111;
       }
@@ -227,7 +237,7 @@ body {
 }
 
 .section-full {
-  @media(min-width: 1023px) {
+  @media (min-width: 1023px) {
     height: 100vh;
     display: flex;
     justify-content: space-between;
@@ -244,10 +254,10 @@ body {
   background: #fff;
   color: #111;
   font-size: 1rem;
-  @media(min-width: 768px) {
+  @media (min-width: 768px) {
     font-size: 1.25rem;
   }
-  @media(min-width: 1024px) {
+  @media (min-width: 1024px) {
     font-size: 1.45rem;
   }
 }
@@ -263,7 +273,7 @@ body {
     display: block;
     width: 100%;
     position: static !important;
-    transition: transform .2s ease-in-out;
+    transition: transform 0.2s ease-in-out;
   }
 
   &__link {
@@ -294,19 +304,19 @@ body {
     width: 700px;
     pointer-events: none;
     opacity: 0;
-    transition: opacity .2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
     background: -webkit-gradient(
-                    linear,
-                    left top,
-                    right top,
-                    from(#000),
-                    color-stop(5%, #000),
-                    to(transparent)
+      linear,
+      left top,
+      right top,
+      from(#000),
+      color-stop(5%, #000),
+      to(transparent)
     );
     background: linear-gradient(90deg, #000, #000 5%, transparent);
   }
 
-  @media(min-width: 1023px) {
+  @media (min-width: 1023px) {
     &.active:before {
       content: '';
       opacity: 1;
@@ -322,7 +332,7 @@ body {
 
   h1 {
     font-family: 'DM Sans';
-    opacity: .7;
+    opacity: 0.7;
     font-weight: 700;
     font-style: normal;
     font-size: 4rem;
@@ -354,7 +364,7 @@ body {
     color: #fff;
     font-size: 14px;
     padding: 5px 12px;
-    @media(min-width: 1023px) {
+    @media (min-width: 1023px) {
       font-size: 1.2rem;
       padding: 10px 50px;
     }
@@ -437,8 +447,12 @@ button {
   border-radius: 50%;
   box-shadow: 0 0 0 1px white;
   pointer-events: none;
-  transition: top 0.15s ease-out, left 0.15s ease-out, width 0.15s ease-out, height 0.15s ease-out,
-  background-color 0.15s ease-out;
+  transition:
+    top 0.15s ease-out,
+    left 0.15s ease-out,
+    width 0.15s ease-out,
+    height 0.15s ease-out,
+    background-color 0.15s ease-out;
   z-index: 999;
 }
 
@@ -469,14 +483,14 @@ button {
 
 .swiper-slide:first-child {
   display: none;
-  @media(min-width: 1023px) {
+  @media (min-width: 1023px) {
     display: block;
   }
 }
 
 .p-info {
   display: none;
-  @media(min-width: 1023px) {
+  @media (min-width: 1023px) {
     display: block;
   }
 }

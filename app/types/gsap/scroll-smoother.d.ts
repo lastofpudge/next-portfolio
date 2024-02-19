@@ -1,17 +1,16 @@
 declare class ScrollSmoother {
+  static readonly version: string
 
-  static readonly version: string;
-
-  readonly scrollTrigger: ScrollTrigger;
-  readonly progress: number;
-  readonly normalizer?: Observer;
+  readonly scrollTrigger: ScrollTrigger
+  readonly progress: number
+  readonly normalizer?: Observer
 
   /**
    * Creates an instance of ScrollSmoother.
    * @param {ScrollSmoother.Vars} vars
    * @memberof ScrollSmoother
    */
-  constructor(vars: ScrollSmoother.Vars);
+  constructor(vars: ScrollSmoother.Vars)
 
   /**
    * Create a ScrollSmoother instance to smooth the scrolling of the page (only one can exist at any time)
@@ -31,7 +30,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/static.create()
    */
-  static create(vars: ScrollSmoother.Vars): ScrollSmoother;
+  static create(vars: ScrollSmoother.Vars): ScrollSmoother
 
   /**
    * Returns the ScrollSmoother instance (if one has been created). Only one is allowed at any given time.
@@ -45,7 +44,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/static.get()
    */
-  static get(): ScrollSmoother | undefined;
+  static get(): ScrollSmoother | undefined
 
   /**
    * Refreshes all ScrollTriggers (same as ScrollTrigger.refresh())
@@ -58,7 +57,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/static.refresh()
    */
-  static refresh(safe?: boolean): void;
+  static refresh(safe?: boolean): void
 
   /**
    * Sets the content element (the element that moves up and down when scrolling)
@@ -72,7 +71,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/content()
    */
-  content(element: gsap.DOMTarget): this;
+  content(element: gsap.DOMTarget): this
 
   /**
    * Gets the content element (the element that moves up and down when scrolling)
@@ -85,7 +84,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/content()
    */
-  content(): HTMLElement;
+  content(): HTMLElement
 
   /**
    * Applies "speed" and/or "lag" effects to the supplied targets (instead of using HTML attributes like data-speed and data-lag)
@@ -103,7 +102,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/effects()
    */
-  effects(targets: gsap.DOMTarget, vars?: ScrollSmoother.EffectsVars | null): ScrollTrigger[];
+  effects(targets: gsap.DOMTarget, vars?: ScrollSmoother.EffectsVars | null): ScrollTrigger[]
 
   /**
    * Gets the ScrollTrigger instances that are managing the effects (like "speed" and/or "lag")
@@ -116,7 +115,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/effects()
    */
-  effects(): ScrollTrigger[];
+  effects(): ScrollTrigger[]
 
   /**
    * Returns the velocity of the vertical scrolling in pixels per second
@@ -129,7 +128,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/getVelocity()
    */
-  getVelocity(): number;
+  getVelocity(): number
 
   /**
    * Kills the ScrollSmoother instance, reverting the inline CSS of the content and wrapper, removing listeners, etc. This is permanent but you can ScrollSmoother.create() a new one.
@@ -137,11 +136,11 @@ declare class ScrollSmoother {
    * ```js
    * scrollSmoother.kill();
    * ```
-   * 
+   *
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/kill()
    */
-  kill(): void;
+  kill(): void
 
   /**
    * Gets the numeric offset (scroll position) associated with a particular element.
@@ -156,7 +155,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/offset()
    */
-  offset(target: gsap.DOMTarget, position?: string): number;
+  offset(target: gsap.DOMTarget, position?: string): number
 
   /**
    * Sets the paused state - if true, nothing will scroll (except via .scrollTop() or .scrollTo() on this instance). Serves as a getter and setter function
@@ -170,7 +169,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/paused()
    */
-  paused(value: boolean): this;
+  paused(value: boolean): this
 
   /**
    * Gets the paused state. Serves as a getter and setter function.
@@ -185,7 +184,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/paused()
    */
-  paused(): boolean;
+  paused(): boolean
 
   /**
    * Refreshes only the main page's smoothing ScrollTrigger
@@ -199,7 +198,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/refresh()
    */
-  refresh(soft?: boolean, force?: boolean): void;
+  refresh(soft?: boolean, force?: boolean): void
 
   /**
    * Scrolls to a particular position or target immediately or in a smooth manner.
@@ -215,7 +214,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/scrollTo()
    */
-  scrollTo(target: gsap.DOMTarget | number, smooth?: boolean, position?: string): void;
+  scrollTo(target: gsap.DOMTarget | number, smooth?: boolean, position?: string): void
 
   /**
    * Immediately scrolls to a particular numeric scroll position
@@ -229,7 +228,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/scrollTop()
    */
-  scrollTop(position: number): this;
+  scrollTop(position: number): this
 
   /**
    * Gets the scroll position (numeric offset)
@@ -242,7 +241,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/scrollTop()
    */
-  scrollTop(): number;
+  scrollTop(): number
   //
   // /**
   //  * Sets up ScrollTriggers to handle hiding elements (sections) when they're sufficiently outside the viewport in order to improve performance in some situations.
@@ -283,7 +282,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/smooth()
    */
-  smooth(value: number): void;
+  smooth(value: number): void
 
   /**
    * Gets the number of seconds it takes to catch up to the scroll position (smoothing).
@@ -296,7 +295,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/smooth()
    */
-  smooth(): number;
+  smooth(): number
 
   /**
    * Sets the wrapper element which serves as the viewport (scrolls the content)
@@ -310,7 +309,7 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/wrapper()
    */
-  wrapper(element: gsap.DOMTarget): this;
+  wrapper(element: gsap.DOMTarget): this
 
   /**
    * Gets the wrapper element which serves as the viewport (scrolls the content)
@@ -323,20 +322,18 @@ declare class ScrollSmoother {
    * @memberof ScrollSmoother
    * @link https://greensock.com/docs/v3/Plugins/ScrollSmoother/wrapper()
    */
-  wrapper(): HTMLElement;
-
+  wrapper(): HTMLElement
 }
 
 declare namespace ScrollSmoother {
-
-  type Callback = (self: ScrollSmoother) => any;
-  type EventCallback = (self: ScrollSmoother, event: Event) => any;
-  type EffectFunc = (index: number, element: Element) => number | string;
+  type Callback = (self: ScrollSmoother) => any
+  type EventCallback = (self: ScrollSmoother, event: Event) => any
+  type EffectFunc = (index: number, element: Element) => number | string
 
   interface EffectsVars {
-    speed?: number | string | EffectFunc;
-    lag?: number | EffectFunc;
-    effectsPadding?: number | string | EffectFunc;
+    speed?: number | string | EffectFunc
+    lag?: number | EffectFunc
+    effectsPadding?: number | string | EffectFunc
   }
   //
   // interface SectionVars {
@@ -344,64 +341,59 @@ declare namespace ScrollSmoother {
   // }
 
   interface Vars {
-    autoResize?: boolean;
-    content?: gsap.DOMTarget;
-    ease?: string | Function;
-    effects?: boolean | gsap.DOMTarget;
-    effectsPrefix?: string;
-    effectsPadding?: number;
-    ignoreMobileResize?: boolean;
-    normalizeScroll?: boolean | ScrollTrigger.NormalizeVars;
-    onFocusIn?: EventCallback;
-    onUpdate?: Callback;
-    onStop?: Callback;
- //   sections?: boolean | gsap.DOMTarget;
-    smooth?: boolean | number;
-    smoothTouch?: boolean | number;
-    speed?: number;
-    wrapper?: gsap.DOMTarget;
-  }
-
-}
-
-
-declare module "gsap/ScrollSmoother" {
-  class _ScrollSmoother extends ScrollSmoother { }
-  export {
-    _ScrollSmoother as ScrollSmoother,
-    _ScrollSmoother as default
+    autoResize?: boolean
+    content?: gsap.DOMTarget
+    ease?: string | Function
+    effects?: boolean | gsap.DOMTarget
+    effectsPrefix?: string
+    effectsPadding?: number
+    ignoreMobileResize?: boolean
+    normalizeScroll?: boolean | ScrollTrigger.NormalizeVars
+    onFocusIn?: EventCallback
+    onUpdate?: Callback
+    onStop?: Callback
+    //   sections?: boolean | gsap.DOMTarget;
+    smooth?: boolean | number
+    smoothTouch?: boolean | number
+    speed?: number
+    wrapper?: gsap.DOMTarget
   }
 }
 
-declare module "gsap/dist/ScrollSmoother" {
-  export * from "gsap/ScrollSmoother";
-  export { ScrollSmoother as default } from "gsap/ScrollSmoother";
+declare module 'gsap/ScrollSmoother' {
+  class _ScrollSmoother extends ScrollSmoother {}
+  export { _ScrollSmoother as ScrollSmoother, _ScrollSmoother as default }
 }
 
-declare module "gsap/src/ScrollSmoother" {
-  export * from "gsap/ScrollSmoother";
-  export { ScrollSmoother as default } from "gsap/ScrollSmoother";
+declare module 'gsap/dist/ScrollSmoother' {
+  export * from 'gsap/ScrollSmoother'
+  export { ScrollSmoother as default } from 'gsap/ScrollSmoother'
 }
 
-declare module "gsap/all" {
-  export * from "gsap/ScrollSmoother";
+declare module 'gsap/src/ScrollSmoother' {
+  export * from 'gsap/ScrollSmoother'
+  export { ScrollSmoother as default } from 'gsap/ScrollSmoother'
 }
 
-declare module "gsap-trial/ScrollSmoother" {
-  export * from "gsap/ScrollSmoother";
-  export { ScrollSmoother as default } from "gsap/ScrollSmoother";
+declare module 'gsap/all' {
+  export * from 'gsap/ScrollSmoother'
 }
 
-declare module "gsap-trial/dist/ScrollSmoother" {
-  export * from "gsap/ScrollSmoother";
-  export { ScrollSmoother as default } from "gsap/ScrollSmoother";
+declare module 'gsap-trial/ScrollSmoother' {
+  export * from 'gsap/ScrollSmoother'
+  export { ScrollSmoother as default } from 'gsap/ScrollSmoother'
 }
 
-declare module "gsap-trial/src/ScrollSmoother" {
-  export * from "gsap/ScrollSmoother";
-  export { ScrollSmoother as default } from "gsap/ScrollSmoother";
+declare module 'gsap-trial/dist/ScrollSmoother' {
+  export * from 'gsap/ScrollSmoother'
+  export { ScrollSmoother as default } from 'gsap/ScrollSmoother'
 }
 
-declare module "gsap-trial/all" {
-  export * from "gsap/ScrollSmoother";
+declare module 'gsap-trial/src/ScrollSmoother' {
+  export * from 'gsap/ScrollSmoother'
+  export { ScrollSmoother as default } from 'gsap/ScrollSmoother'
+}
+
+declare module 'gsap-trial/all' {
+  export * from 'gsap/ScrollSmoother'
 }

@@ -1,6 +1,5 @@
 declare namespace gsap {
-
-  type RegisterablePlugins = 
+  type RegisterablePlugins =
     | Ease
     | EasePack
     | ExpoScaleEase
@@ -18,103 +17,124 @@ declare namespace gsap {
     | typeof Flip
     | typeof ScrollTrigger
     | typeof Observer
-    | typeof ScrollSmoother;
+    | typeof ScrollSmoother
 
   // querySelector returns type Element | null
-  type DOMTarget = Element | string | null | Window | ArrayLike<Element | string | Window | null>;
-  type TweenTarget = string | object | null; 
+  type DOMTarget = Element | string | null | Window | ArrayLike<Element | string | Window | null>
+  type TweenTarget = string | object | null
 
-  type Callback = (...args: any[]) => void | null;
-  type ContextFunc = (context: Context) => Function | any | void;
-  type CallbackType = "onComplete" | "onInterrupt" | "onRepeat" | "onReverseComplete" | "onStart" | "onUpdate";
-  type TickerCallback = (time: number, deltaTime: number, frame: number, elapsed: number) => void | null;
+  type Callback = (...args: any[]) => void | null
+  type ContextFunc = (context: Context) => Function | any | void
+  type CallbackType =
+    | 'onComplete'
+    | 'onInterrupt'
+    | 'onRepeat'
+    | 'onReverseComplete'
+    | 'onStart'
+    | 'onUpdate'
+  type TickerCallback = (
+    time: number,
+    deltaTime: number,
+    frame: number,
+    elapsed: number
+  ) => void | null
 
-  type Point2D = { x: number, y: number };
-  type Position = number | string;
-  
-  type FunctionBasedValue<T> = (index: number, target: any, targets: any[]) => T;
-  type ArrayValue = any[] | FunctionBasedValue<any[]>;
-  type BooleanValue = boolean | FunctionBasedValue<boolean>;
-  type NumberValue = number | FunctionBasedValue<number>;
-  type StringValue = string | FunctionBasedValue<string>;
-  type ElementValue = Element | FunctionBasedValue<Element>;
-  type TweenValue = NumberValue | StringValue;
+  type Point2D = { x: number; y: number }
+  type Position = number | string
+
+  type FunctionBasedValue<T> = (index: number, target: any, targets: any[]) => T
+  type ArrayValue = any[] | FunctionBasedValue<any[]>
+  type BooleanValue = boolean | FunctionBasedValue<boolean>
+  type NumberValue = number | FunctionBasedValue<number>
+  type StringValue = string | FunctionBasedValue<string>
+  type ElementValue = Element | FunctionBasedValue<Element>
+  type TweenValue = NumberValue | StringValue
   type QuickToFunc = {
-    (value: number, start?: number, startIsRelative?: boolean): core.Tween;
-    tween: core.Tween;
+    (value: number, start?: number, startIsRelative?: boolean): core.Tween
+    tween: core.Tween
   }
-  
-  type SVGPathValue = string | SVGPathElement;
-  type SVGPathTarget = SVGPathValue | ArrayLike<SVGPathValue>;
-  type SVGPrimitive = SVGCircleElement | SVGRectElement | SVGEllipseElement | SVGPolygonElement | SVGPolylineElement | SVGLineElement;
+
+  type SVGPathValue = string | SVGPathElement
+  type SVGPathTarget = SVGPathValue | ArrayLike<SVGPathValue>
+  type SVGPrimitive =
+    | SVGCircleElement
+    | SVGRectElement
+    | SVGEllipseElement
+    | SVGPolygonElement
+    | SVGPolylineElement
+    | SVGLineElement
 
   interface Conditions {
-    [key: string]: boolean;
+    [key: string]: boolean
   }
   interface Context {
-    [key: string]: any;
-    selector?: Function;
-    isReverted: boolean;
-    conditions?: Conditions;
-    queries?: object;
-    add(methodName: string, func: Function, scope?: Element | string | object): Function;
-    add(func: Function, scope?: Element | string | object): void;
-    ignore(func: Function): void;
-    kill(revert?: boolean): void;
-    revert(config?: object): void;
-    clear(): void;
+    [key: string]: any
+    selector?: Function
+    isReverted: boolean
+    conditions?: Conditions
+    queries?: object
+    add(methodName: string, func: Function, scope?: Element | string | object): Function
+    add(func: Function, scope?: Element | string | object): void
+    ignore(func: Function): void
+    kill(revert?: boolean): void
+    revert(config?: object): void
+    clear(): void
   }
 
   interface MatchMedia {
-    contexts: Context[];
-    add(conditions: string | object, func: ContextFunc, scope?: Element | string | object): MatchMedia;
-    revert(config?: object): void;
-    kill(revert?: boolean):void;
+    contexts: Context[]
+    add(
+      conditions: string | object,
+      func: ContextFunc,
+      scope?: Element | string | object
+    ): MatchMedia
+    revert(config?: object): void
+    kill(revert?: boolean): void
   }
 
   interface AnimationVars extends CallbackVars {
-    [key: string]: any;
-    data?: any;    
-    id?: string | number;
-    inherit?: boolean;
-    paused?: boolean;
-    repeat?: number;
-    repeatDelay?: number;
-    repeatRefresh?: boolean;
-    reversed?: boolean;
-    yoyo?: boolean;
-  }  
+    [key: string]: any
+    data?: any
+    id?: string | number
+    inherit?: boolean
+    paused?: boolean
+    repeat?: number
+    repeatDelay?: number
+    repeatRefresh?: boolean
+    reversed?: boolean
+    yoyo?: boolean
+  }
 
   interface CallbackVars {
-    callbackScope?: object;
-    onComplete?: Callback;
-    onCompleteParams?: any[];
-    onRepeat?: Callback;
-    onRepeatParams?: any[];
-    onReverseComplete?: Callback;
-    onReverseCompleteParams?: any[];
-    onStart?: Callback;
-    onStartParams?: any[];
-    onUpdate?: Callback;
-    onUpdateParams?: any[];
+    callbackScope?: object
+    onComplete?: Callback
+    onCompleteParams?: any[]
+    onRepeat?: Callback
+    onRepeatParams?: any[]
+    onReverseComplete?: Callback
+    onReverseCompleteParams?: any[]
+    onStart?: Callback
+    onStartParams?: any[]
+    onUpdate?: Callback
+    onUpdateParams?: any[]
   }
 
   interface EaseMap {
-    [key: string]: EaseFunction;
+    [key: string]: EaseFunction
   }
 
   interface EffectsMap {
-    [key: string]: any;
+    [key: string]: any
   }
 
   interface GSAPConfig {
-    autoKillThreshold?: number;
-    autoSleep?: number;
-    force3D?: "auto" | boolean;
-    nullTargetWarn?: boolean;
-    resistance?: number;
-    stringFilter?: Callback; // TODO: Find out signature
-    unitFactors?: { time?: number, totalTime?: number };
+    autoKillThreshold?: number
+    autoSleep?: number
+    force3D?: 'auto' | boolean
+    nullTargetWarn?: boolean
+    resistance?: number
+    stringFilter?: Callback // TODO: Find out signature
+    unitFactors?: { time?: number; totalTime?: number }
     units?: GSAPUnits
   }
 
@@ -141,64 +161,64 @@ declare namespace gsap {
   } & {
     [key: string]: string
   }
-  
+
   interface StaggerVars extends CallbackVars, utils.DistributeConfig {
-    repeat?: number;
-    repeatDelay?: number;
-    yoyo?: boolean;
-    yoyoEase?: boolean | string | EaseFunction;
+    repeat?: number
+    repeatDelay?: number
+    yoyo?: boolean
+    yoyoEase?: boolean | string | EaseFunction
   }
 
   interface Ticker {
-    add(callback: TickerCallback, once?: boolean, prioritize?: boolean): Callback;
-    fps(fps: number): void;
-    frame: number;
-    lagSmoothing(threshold: number | boolean, adjustedLag?: number): void;
-    remove(callback: Callback): void;
-    sleep(): void;
-    tick(): void;
-    time: number;
-    deltaRatio(fps?: number): number;
-    wake(): void;
+    add(callback: TickerCallback, once?: boolean, prioritize?: boolean): Callback
+    fps(fps: number): void
+    frame: number
+    lagSmoothing(threshold: number | boolean, adjustedLag?: number): void
+    remove(callback: Callback): void
+    sleep(): void
+    tick(): void
+    time: number
+    deltaRatio(fps?: number): number
+    wake(): void
   }
 
   interface TimelineVars extends AnimationVars {
-    autoRemoveChildren?: boolean;
-    defaults?: TweenVars;
-    delay?: number;
-    smoothChildTiming?: boolean;
+    autoRemoveChildren?: boolean
+    defaults?: TweenVars
+    delay?: number
+    smoothChildTiming?: boolean
   }
 
   interface TweenVars extends AnimationVars {
-    delay?: TweenValue;
-    duration?: TweenValue;
-    ease?: string | EaseFunction;
-    endArray?: any[];
-    immediateRender?: boolean;    
-    lazy?: boolean;
-    keyframes?: TweenVars[] | object;
-    onInterrupt?: Callback;
-    onInterruptParams?: any[];
-    overwrite?: "auto" | boolean;
-    runBackwards?: boolean;
-    stagger?: NumberValue | StaggerVars;
-    startAt?: TweenVars;
-    yoyoEase?: boolean | string | EaseFunction;
+    delay?: TweenValue
+    duration?: TweenValue
+    ease?: string | EaseFunction
+    endArray?: any[]
+    immediateRender?: boolean
+    lazy?: boolean
+    keyframes?: TweenVars[] | object
+    onInterrupt?: Callback
+    onInterruptParams?: any[]
+    overwrite?: 'auto' | boolean
+    runBackwards?: boolean
+    stagger?: NumberValue | StaggerVars
+    startAt?: TweenVars
+    yoyoEase?: boolean | string | EaseFunction
   }
 
-  const effects: EffectsMap;
+  const effects: EffectsMap
 
-  const globalTimeline: core.Timeline;
+  const globalTimeline: core.Timeline
 
-  const ticker: Ticker;
+  const ticker: Ticker
 
-  const version: string;
+  const version: string
 
   /**
    * Gets or sets GSAP's global configuration settings.
-   * 
+   *
    * Options: autoSleep, force3D, nullTargetWarn, and units
-   * 
+   *
    * ```js
    * gsap.config({force3D: false});
    * ```
@@ -208,7 +228,7 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.config()
    */
-  function config(config?: GSAPConfig): GSAPConfig;
+  function config(config?: GSAPConfig): GSAPConfig
 
   /**
    * Creates a Context object for recording/reverting any GSAP animations and/or ScrollTriggers that are in the provided function
@@ -228,11 +248,11 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.context()
    */
-  function context(func?: ContextFunc, scope?: Element | string | object): Context;
+  function context(func?: ContextFunc, scope?: Element | string | object): Context
 
   /**
    * Gets or sets GSAP's global defaults. These will be inherited by every tween.
-   * 
+   *
    * ```js
    * gsap.defaults({ease: "none", duration: 1});
    * ```
@@ -242,7 +262,7 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.defaults()
    */
-  function defaults(defaults?: TweenVars): TweenVars;
+  function defaults(defaults?: TweenVars): TweenVars
 
   /**
    * Delays the call of a function by the specified amount.
@@ -258,7 +278,7 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.delayedCall()
    */
-  function delayedCall(delay: number, callback: Function, params?: any[]): core.Tween;
+  function delayedCall(delay: number, callback: Function, params?: any[]): core.Tween
 
   /**
    * Transfers all tweens, timelines, and (optionally) delayed calls from the root timeline into a new timeline.
@@ -273,7 +293,7 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.exportRoot()
    */
-  function exportRoot(vars?: TimelineVars, includeDelayedCalls?: boolean): core.Timeline;
+  function exportRoot(vars?: TimelineVars, includeDelayedCalls?: boolean): core.Timeline
 
   /**
    * Creates a tween coming FROM the given values.
@@ -288,10 +308,10 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.from()
    */
-  function from(targets: TweenTarget, vars: TweenVars): core.Tween;
+  function from(targets: TweenTarget, vars: TweenVars): core.Tween
   /**
    * **Deprecated method signature.** Use the `duration` property instead.
-   * 
+   *
    * ```js
    * gsap.from(".class", 1, {x: 100});
    * ```
@@ -303,9 +323,9 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.from()
    */
-  function from(targets: TweenTarget, duration: number, vars:TweenVars): core.Tween;
+  function from(targets: TweenTarget, duration: number, vars: TweenVars): core.Tween
 
-   /**
+  /**
    * Creates a tween coming FROM the first set of values going TO the second set of values.
    *
    * ```js
@@ -319,10 +339,10 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.fromTo()
    */
-  function fromTo(targets: TweenTarget, fromVars: TweenVars, toVars: TweenVars): core.Tween;
+  function fromTo(targets: TweenTarget, fromVars: TweenVars, toVars: TweenVars): core.Tween
   /**
    * **Deprecated method signature.** Use the `duration` property instead.
-   * 
+   *
    * ```js
    * gsap.fromTo(".class", 1, {x: 0}, {x: 100});
    * ```
@@ -334,14 +354,19 @@ declare namespace gsap {
    * @returns {Tween} Tween instance
    * @link https://greensock.com/docs/v3/GSAP/gsap.fromTo()
    */
-  function fromTo(targets: TweenTarget, duration: number, fromVars: TweenVars, toVars: TweenVars): core.Tween;
+  function fromTo(
+    targets: TweenTarget,
+    duration: number,
+    fromVars: TweenVars,
+    toVars: TweenVars
+  ): core.Tween
 
   /**
    * Gets the tween or timeline with the specified ID if it exists.
    *
    * ```js
    * gsap.to(obj, {id: "myTween", x: 100});
-   * 
+   *
    * // later
    * let tween = gsap.getById("myTween");
    * ```
@@ -351,7 +376,7 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.getById()
    */
-  function getById<T extends core.Animation>(id: string | number): T;
+  function getById<T extends core.Animation>(id: string | number): T
 
   /**
    * Gets the specified property of the target (or first of the targets) if it exists.
@@ -367,8 +392,8 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.getProperty()
    */
-  function getProperty(target: TweenTarget, property: string, unit?: string): string | number;
-  function getProperty(target: TweenTarget): (property: string, unit?: string) => string | number;
+  function getProperty(target: TweenTarget, property: string, unit?: string): string | number
+  function getProperty(target: TweenTarget): (property: string, unit?: string) => string | number
 
   /**
    * Gets all of the tweens whose targets include the specified target or group of targets.
@@ -383,7 +408,7 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.getTweensOf()
    */
-  function getTweensOf(targets: TweenTarget, onlyActive?: boolean): core.Tween[];
+  function getTweensOf(targets: TweenTarget, onlyActive?: boolean): core.Tween[]
 
   /**
    * Used to add all the GSAP globals to a particular tween object.
@@ -391,12 +416,12 @@ declare namespace gsap {
    * ```js
    * gsap.install(myTween);
    * ```
-   * 
+   *
    * @param {object} targets
    * @returns {gsap} The gsap object
    * @memberof gsap
    */
-  function install(targets: object): typeof gsap;
+  function install(targets: object): typeof gsap
 
   /**
    * Reports whether or not a particular object is actively animating.
@@ -404,13 +429,13 @@ declare namespace gsap {
    * ```js
    * gsap.isTweening("#id");
    * ```
-   * 
+   *
    * @param {TweenTarget} targets
    * @returns {boolean} Status
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.isTweening()
    */
-  function isTweening(targets: TweenTarget): boolean;
+  function isTweening(targets: TweenTarget): boolean
 
   /**
    * Kills all the tweens (or specific tweening properties) of a particular object or the delayedCalls to a particular function.
@@ -427,7 +452,11 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.killTweensOf()
    */
-  function killTweensOf(targets: TweenTarget, properties?: object | string, onlyActive?: boolean): void;
+  function killTweensOf(
+    targets: TweenTarget,
+    properties?: object | string,
+    onlyActive?: boolean
+  ): void
 
   /**
    * Creates a MatchMedia object for adding functions that run when a media query matches
@@ -444,7 +473,7 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.matchMedia()
    */
-  function matchMedia(scope?: Element | string | object): MatchMedia;
+  function matchMedia(scope?: Element | string | object): MatchMedia
 
   /**
    * Immediately reverts all active/matching MatchMedia objects and then runs any that currently match.
@@ -456,7 +485,7 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.matchMediaRefresh()
    */
-  function matchMediaRefresh(): void;
+  function matchMediaRefresh(): void
 
   /**
    * Returns the corresponding easing function for the given easing string.
@@ -470,15 +499,15 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.parseEase()
    */
-  function parseEase(ease: string | EaseFunction): EaseFunction;
-  function parseEase(): EaseMap;
+  function parseEase(ease: string | EaseFunction): EaseFunction
+  function parseEase(): EaseMap
 
   /**
    * Returns a function that acts as a simpler alternative of gsap.set() that is more performant but less versatile.
    *
    * ```js
    * let setX = gsap.quickSetter("#id", "x", "px");
-   * 
+   *
    * // later
    * setX(100);
    * ```
@@ -490,7 +519,7 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.quickSetter()
    */
-  function quickSetter(targets: TweenTarget, property: string, unit?: string): Function;
+  function quickSetter(targets: TweenTarget, property: string, unit?: string): Function
 
   /**
    * Returns a reusable function that performantly redirects a specific property to a new value, restarting the animation each time you feed in a new number.
@@ -509,7 +538,7 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.quickTo()
    */
-  function quickTo(target: TweenTarget, property: string, vars?: TweenVars): QuickToFunc;
+  function quickTo(target: TweenTarget, property: string, vars?: TweenVars): QuickToFunc
 
   /**
    * Register custom easing functions with GSAP, giving it a name so it can be referenced in any tweens.
@@ -525,7 +554,7 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.registerEase()
    */
-  function registerEase(name: string, ease: EaseFunction): void;
+  function registerEase(name: string, ease: EaseFunction): void
 
   // TODO: Create interface for effect
   /**
@@ -552,11 +581,11 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.registerEffect()
    */
-  function registerEffect(effect: object): void;
-  
+  function registerEffect(effect: object): void
+
   /**
    * Installs the specified GSAP plugins, provided they have been loaded already.
-   * 
+   *
    * ```js
    * gsap.registerPlugin(MorphSVPlugin, MotionPathPlugin);
    * ```
@@ -565,8 +594,8 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.registerPlugin()
    */
-  function registerPlugin(...args: object[]): void;
-  
+  function registerPlugin(...args: object[]): void
+
   /**
    * Immediately sets properties of the target(s) to the properties specified.
    *
@@ -580,7 +609,7 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.set()
    */
-  function set(targets: TweenTarget, vars: TweenVars): core.Tween;
+  function set(targets: TweenTarget, vars: TweenVars): core.Tween
 
   /**
    * Creates a new timeline, used to compose sequences of tweens.
@@ -590,7 +619,7 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.timeline()
    */
-  function timeline(vars?: TimelineVars): core.Timeline;
+  function timeline(vars?: TimelineVars): core.Timeline
 
   /**
    * Creates a tween going TO the given values.
@@ -605,10 +634,10 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.to()
    */
-  function to(targets: TweenTarget, vars: TweenVars): core.Tween;
+  function to(targets: TweenTarget, vars: TweenVars): core.Tween
   /**
    * **Deprecated method signature.** Use the `duration` property instead.
-   * 
+   *
    * ```js
    * gsap.to(".class", 1, {x: 100});
    * ```
@@ -620,7 +649,7 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.to()
    */
-  function to(targets: TweenTarget, duration: number, vars: TweenVars): core.Tween;
+  function to(targets: TweenTarget, duration: number, vars: TweenVars): core.Tween
 
   /**
    * Manually update the root (global) timeline. Make sure to unhook GSAP's default ticker.
@@ -628,7 +657,7 @@ declare namespace gsap {
    * ```js
    * // unhooks the GSAP ticker
    * gsap.ticker.remove(gsap.updateRoot);
-   * 
+   *
    * // sets the root time to 20 seconds manually
    * gsap.updateRoot(20);
    * ```
@@ -638,7 +667,7 @@ declare namespace gsap {
    * @memberof gsap
    * @link https://greensock.com/docs/v3/GSAP/gsap.updateRoot()
    */
-  function updateRoot(time: number): void;  
+  function updateRoot(time: number): void
 }
 
 // TODO: Move to files where declared
@@ -666,9 +695,8 @@ declare class TimelineLite extends gsap.core.Timeline {}
  */
 declare class TimelineMax extends gsap.core.Timeline {}
 
-declare module "gsap/gsap-core" {
-
-  const _gsap: typeof gsap;  
+declare module 'gsap/gsap-core' {
+  const _gsap: typeof gsap
 
   // TODO: Move to files where declared
   /**
@@ -695,23 +723,20 @@ declare module "gsap/gsap-core" {
    */
   export class TimelineMax extends gsap.core.Timeline {}
 
-  export {
-    _gsap as gsap,
-    _gsap as default
-  }
+  export { _gsap as gsap, _gsap as default }
 }
 
-declare module "gsap/src/gsap-core" {
-  export * from "gsap/gsap-core";
-  export { gsap as default } from "gsap/gsap-core";
+declare module 'gsap/src/gsap-core' {
+  export * from 'gsap/gsap-core'
+  export { gsap as default } from 'gsap/gsap-core'
 }
 
-declare module "gsap-trial/gsap-core" {
-  export * from "gsap/gsap-core";
-  export { gsap as default } from "gsap/gsap-core";
+declare module 'gsap-trial/gsap-core' {
+  export * from 'gsap/gsap-core'
+  export { gsap as default } from 'gsap/gsap-core'
 }
 
-declare module "gsap-trial/src/gsap-core" {
-  export * from "gsap/gsap-core";
-  export { gsap as default } from "gsap/gsap-core";
+declare module 'gsap-trial/src/gsap-core' {
+  export * from 'gsap/gsap-core'
+  export { gsap as default } from 'gsap/gsap-core'
 }

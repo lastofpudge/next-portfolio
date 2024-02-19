@@ -20,7 +20,7 @@ const useCursor = () => {
       }, 200)
     })
 
-    document.addEventListener('mousemove', (e) => {
+    document.addEventListener('mousemove', e => {
       cursorPos.x = e.clientX
       cursorPos.y = e.clientY
       // @ts-ignore
@@ -37,8 +37,8 @@ const useCursor = () => {
       requestAnimationFrame(loop)
     })
 
-    document.querySelectorAll('[data-cursor]').forEach((item) => {
-      item.addEventListener('mouseover', (e) => {
+    document.querySelectorAll('[data-cursor]').forEach(item => {
+      item.addEventListener('mouseover', e => {
         // @ts-ignore
         if (item.dataset.cursor === 'pointer') {
           // @ts-ignore
@@ -56,7 +56,7 @@ const useCursor = () => {
           cursorBorder.style.setProperty('--size', '80px')
         }
       })
-      item.addEventListener('mouseout', (e) => {
+      item.addEventListener('mouseout', e => {
         // @ts-ignore
         cursorBorder.style.backgroundColor = 'unset'
         // @ts-ignore

@@ -8,27 +8,23 @@ import Slider from '@/components/slider'
 import useCursor from '@/hooks/useCursor'
 import Meta from '@/utils/meta'
 
-const { SplitText } = require( '@/libs/gsap/SplitText.min.js' )
+const { SplitText } = require('@/libs/gsap/SplitText.min.js')
 
 const Home = () => {
   useCursor()
 
-  const runEffects = useCallback( () => {
-    const Text = new SplitText( '.js-title', { type: 'chars' } )
+  const runEffects = useCallback(() => {
+    const Text = new SplitText('.js-title', { type: 'chars' })
 
-    gsap.from( Text.chars,  { x: -40, autoAlpha: 0, duration: 1 } )
-    gsap.fromTo(
-        '.p-slider',
-        {},
-        { autoAlpha: 1, duration: 1.5, delay: 1}
-      )
-  }, [] )
+    gsap.from(Text.chars, { x: -40, autoAlpha: 0, duration: 1 })
+    gsap.fromTo('.p-slider', {}, { autoAlpha: 1, duration: 1.5, delay: 1 })
+  }, [])
 
-  useEffect( () => {
+  useEffect(() => {
     if (typeof window !== 'undefined') {
       runEffects()
     }
-  } )
+  })
 
   return (
     <div>
