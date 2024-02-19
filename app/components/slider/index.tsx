@@ -38,18 +38,19 @@ const Slider = () => {
         mousewheel={true}
         scrollbar={{ draggable: true }}
         keyboard={{ enabled: true }}>
-        {slides?.map((slide, index) => (
+        {slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div className='p-slide'>
               {slide.link != undefined && slide.image != undefined && (
                 <>
                   <div className='p-slide__title'>{slide.desc}</div>
                   <Link
+                    target='_blank'
                     rel='nofollow'
                     href={slide.link}
                     className='p-slide__link'
                     data-cursor={slide.cursor}>
-                    <Image quality={100} fill src={slide.image} alt='De-new' />
+                    <Image quality={100} fill src={slide.image} alt={slide.desc} />
                   </Link>
                 </>
               )}

@@ -1,29 +1,22 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { useCallback, useEffect } from 'react'
 
 import Figure from '@/components/Figure'
 import Header from '@/components/layout/Header'
 import Slider from '@/components/slider'
 import useCursor from '@/hooks/useCursor'
 import Meta from '@/utils/meta'
+import { useGSAP } from '@gsap/react'
 
 const { SplitText } = require('@/libs/gsap/SplitText.min.js')
 
 const Home = () => {
   useCursor()
 
-  const runEffects = useCallback(() => {
+  useGSAP(() => {
     const Text = new SplitText('.js-title', { type: 'chars' })
-
     gsap.from(Text.chars, { x: -40, autoAlpha: 0, duration: 1 })
     gsap.fromTo('.p-slider', {}, { autoAlpha: 1, duration: 1.5, delay: 1 })
-  }, [])
-
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      runEffects()
-    }
   })
 
   return (
